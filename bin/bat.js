@@ -1,6 +1,6 @@
 let request = require('request');
 let fs = require('fs');
-let citys = require('./data/server_side_train_stations.json');
+let citys = require('output/server_side_train_stations.json');
 
 endLessRequest(citys,[]);
 
@@ -35,11 +35,11 @@ function endLessRequest(citys,args,data,undone){
       endLessRequest( citys , args , data , undone );
     });
   }else{
-    fs.writeFile('./data/success.citys.js', JSON.stringify(data), (err) => {
+    fs.writeFile('output/success.citys.js', JSON.stringify(data), (err) => {
       if (err) throw err;
       console.log('解析完的数据已经保存到success.citys.js');
     });
-    fs.writeFile('./data/undone.citys.js', JSON.stringify(undone), (err) => {
+    fs.writeFile('output/undone.citys.js', JSON.stringify(undone), (err) => {
       if (err) throw err;
       console.log('尚未解析的数据保存到undone.citys.js');
     })

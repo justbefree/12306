@@ -52,11 +52,11 @@ request.get(url, function(err,res,body){
   }
   AllStationsString = '[' + AllStationsString + ']';
   AllStationsArray += "']";
-  fs.writeFile('./data/train_stations.js', JSON.stringify(AllStations), (err) => {
+  fs.writeFile('output/train_stations.js', JSON.stringify(AllStations), (err) => {
     if (err) throw err;
-    console.log('解析完的数据已经保存到/data/train_stations.js文件里面');
+    console.log('解析完的数据已经保存到/output/train_stations.js文件里面');
   });
-  fs.writeFile('./data/server_side_train_stations.js', JSON.stringify(ServerSideData), (err) => {
+  fs.writeFile('output/server_side_train_stations.js', JSON.stringify(ServerSideData), (err) => {
     if (err) throw err;
     console.log('为后台提供的城市数据');
   })
@@ -74,12 +74,12 @@ const b = (c) => {
 }
 module.exports = b(c)
 `;
-  fs.writeFile('./data/citydata.js', webfrontend, (err) => {
+  fs.writeFile('output/citydata.js', webfrontend, (err) => {
     if (err) throw err;
     console.log('解析完的数据已经保存到');
   })
-  fs.writeFile('./data/train_stations_2.js', AllStationsString, (err) => {
+  fs.writeFile('output/train_stations_2.js', AllStationsString, (err) => {
     if (err) throw err;
-    console.log('解析完的数据已经保存到/data/train_stations_2.js文件里面');
+    console.log('解析完的数据已经保存到/output/train_stations_2.js文件里面');
   })
 })
