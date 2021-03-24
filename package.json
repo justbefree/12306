@@ -4,7 +4,8 @@
   "description": "",
   "main": "bin/bat.js",
   "scripts": {
-    "gen": "node ./bin/12306.bat.js"
+    "gen": "node ./bin/12306.bat.js",
+    "12306": "node ./bin/12306.bat.js"
   },
   "keywords": [],
   "author": "",
